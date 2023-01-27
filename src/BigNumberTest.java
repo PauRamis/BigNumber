@@ -9,6 +9,10 @@ public class BigNumberTest {
         BigNumber b1, b2;
 
         b1 = new BigNumber("2");
+        b2 = new BigNumber("2");
+        assertEquals(b1, b2);
+
+        b1 = new BigNumber("2");
         b2 = new BigNumber("02");
         assertEquals(b1, b2);
 

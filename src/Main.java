@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        String n = "123456789";
+        String x = n.substring(1, 2);
     }
 }
