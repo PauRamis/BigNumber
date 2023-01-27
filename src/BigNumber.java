@@ -18,7 +18,8 @@ class BigNumber {
 
     // Suma
     BigNumber add(BigNumber other) {
-        return other;
+        BigNumber b3 = new BigNumber("");
+        return b3;
     }
 
     // Resta
@@ -58,12 +59,14 @@ class BigNumber {
     // Compara dos BigNumber. Torna 0 si són iguals, -1 si el primer és menor
     // i torna 1 si el segon és menor
     public int compareTo(BigNumber other) {
+        //Rapida comparació de equals per estalviar temps
         if (other.valor.equals(this.valor)) return 0;
 
         //Descartam que un valor sigui més gran que l'altre
         if (other.valor.length() < this.valor.length()) return 1;
         if (other.valor.length() > this.valor.length()) return -1;
 
+        //Comparam el primer valor diferent a partir de la esquerra
         for (int i = 0; i < this.valor.length(); i++) {
             if (other.valor.charAt(i) < this.valor.charAt(i)) return 1;
             if (other.valor.charAt(i) > this.valor.charAt(i)) return -1;
