@@ -18,8 +18,11 @@ class BigNumber {
 
     // Suma
     BigNumber add(BigNumber other) {
-        BigNumber b3 = new BigNumber("");
-        return b3;
+        String[] b1 = this.valor.split("");
+        String[] b2 = other.valor.split("");
+        String result = "";
+
+        return new BigNumber(result);
     }
 
     // Resta
