@@ -78,7 +78,7 @@ public class BigNumberTest {
         assertEquals(b1, b2);
         assertEquals(new BigNumber("4"), b1.add(b2));
 
-    /*    b1 = new BigNumber("12");
+        b1 = new BigNumber("12");
         b2 = new BigNumber("34");
         assertEquals(new BigNumber("46"), b1.add(b2));
 
@@ -90,7 +90,7 @@ public class BigNumberTest {
         b2 = new BigNumber("999");
         assertEquals(new BigNumber("1122"), b1.add(b2));
 
-        b1 = new BigNumber("999");
+      /*  b1 = new BigNumber("999");
         b2 = new BigNumber("999");
         assertEquals(new BigNumber("1998"), b1.add(b2));
 

@@ -35,8 +35,14 @@ class BigNumber {
         //Bucle per anar sumant els digits
         String result = "";
         int sumaDigits;
+        int resta = 0;
         for (int i = 0; i < maxLength; i++) {
-            sumaDigits = Integer.parseInt(b1[maxLength - 1]) + Integer.parseInt(b2[maxLength - 1]);
+            sumaDigits = Integer.parseInt(b1[maxLength - i - 1]) + Integer.parseInt(b2[maxLength - i - 1]) + resta;
+            resta = 0;
+            while (sumaDigits > 9 && i < maxLength-1){
+                sumaDigits -= 10;
+                resta += 1;
+            }
             result = String.valueOf(sumaDigits) + result;
         }
 
