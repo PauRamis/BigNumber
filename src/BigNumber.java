@@ -22,6 +22,10 @@ class BigNumber {
         String[] b2 = other.valor.split("");
         String result = "";
 
+        int maxLength = b1.length;
+        if (b2.length > maxLength) maxLength = b2.length;
+
+
         return new BigNumber(result);
     }
 
@@ -65,11 +69,11 @@ class BigNumber {
         //Rapida comparació de equals per estalviar temps
         if (other.valor.equals(this.valor)) return 0;
 
-        //Descartam que un valor sigui més gran que l'altre
+        //Descartem que un valor sigui més gran que l'altre
         if (other.valor.length() < this.valor.length()) return 1;
         if (other.valor.length() > this.valor.length()) return -1;
 
-        //Comparam el primer valor diferent a partir de la esquerra
+        //Comparem el primer valor diferent a partir de l'esquerra
         for (int i = 0; i < this.valor.length(); i++) {
             if (other.valor.charAt(i) < this.valor.charAt(i)) return 1;
             if (other.valor.charAt(i) > this.valor.charAt(i)) return -1;
@@ -79,7 +83,7 @@ class BigNumber {
 
     // Torna un String representant el número
     public String toString() {
-        return null;
+        return this.valor;
     }
 
     // Mira si dos objectes BigNumber són iguals
