@@ -90,7 +90,7 @@ public class BigNumberTest {
         b2 = new BigNumber("999");
         assertEquals(new BigNumber("1122"), b1.add(b2));
 
-      /*  b1 = new BigNumber("999");
+        b1 = new BigNumber("999");
         b2 = new BigNumber("999");
         assertEquals(new BigNumber("1998"), b1.add(b2));
 
@@ -101,7 +101,7 @@ public class BigNumberTest {
         b1 = new BigNumber("342234234123423576789423422323123412341234");
         b2 = new BigNumber("3245234789789234234123784567892349789456");
         assertEquals(new BigNumber("345479468913212811023547206891015762130690"), b1.add(b2));
-    */}
+    }
 
     @Test
     public void restes() {

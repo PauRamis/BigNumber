@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class BigNumber {
     String valor;
 
@@ -51,8 +53,9 @@ class BigNumber {
 
     private String[] igualarArray(String[] b, int maxLength) {
         String[] newArr = new String[maxLength];
-        for(int i = 0; i < newArr.length; i++) {
-            newArr[i] = b[i];
+        Arrays.fill(newArr, "0");
+        for(int i = 0; i < b.length; i++) {
+            newArr[maxLength - 1 - i] = b[b.length - 1 - i];
         }
         return newArr;
     }
