@@ -20,13 +20,35 @@ class BigNumber {
     BigNumber add(BigNumber other) {
         String[] b1 = this.valor.split("");
         String[] b2 = other.valor.split("");
-        String result = "";
-
         int maxLength = b1.length;
-        if (b2.length > maxLength) maxLength = b2.length;
 
+        //Si b1 és més llarg, s'allarga b2
+        if (b1.length > b2.length){
+            b2 = igualarArray(b2, maxLength);
+        }
+        //Si b2 és més llarg, s'allarga b1
+        else if (b2.length > b1.length){
+            maxLength = b2.length;
+            b1 = igualarArray(b1, maxLength);
+        }
+
+        //Bucle per anar sumant els digits
+        String result = "";
+        int sumaDigits;
+        for (int i = 0; i < maxLength; i++) {
+            sumaDigits = Integer.parseInt(b1[maxLength - 1]) + Integer.parseInt(b2[maxLength - 1]);
+            result = String.valueOf(sumaDigits) + result;
+        }
 
         return new BigNumber(result);
+    }
+
+    private String[] igualarArray(String[] b, int maxLength) {
+        String[] newArr = new String[maxLength];
+        for(int i = 0; i < newArr.length; i++) {
+            newArr[i] = b[i];
+        }
+        return newArr;
     }
 
     // Resta
