@@ -62,7 +62,40 @@ class BigNumber {
 
     // Resta
     BigNumber sub(BigNumber other) {
-        return other;
+        String[] b1 = this.valor.split("");
+        String[] b2 = other.valor.split("");
+        int maxLength = b1.length;
+
+        //Si b1 és més llarg, s'allarga b2
+        if (b1.length > b2.length){
+            b2 = igualarArray(b2, maxLength);
+        }
+        //Si b2 és més llarg, s'allarga b1
+        else if (b2.length > b1.length){
+            maxLength = b2.length;
+            b1 = igualarArray(b1, maxLength);
+        }
+
+        //Bucle per anar restant els digits
+        String result = "";
+        int sumaDigits;
+        int resta = 0;
+
+        for (int i = 0; i < maxLength; i++) {
+            int digit1 = Integer.parseInt(b1[maxLength - i - 1]);
+            int digit2 = Integer.parseInt(b2[maxLength - i - 1]);
+            if ((digit1 - resta) >= digit2) {
+                sumaDigits = digit1 - resta - digit2;
+                resta = 0;
+            }
+            else{
+                sumaDigits = digit1 + 10 - digit2;
+                resta = 1;
+            }
+            result = sumaDigits + result;
+        }
+
+        return new BigNumber(result);
     }
 
     // Multiplica
