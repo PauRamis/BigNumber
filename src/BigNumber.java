@@ -84,12 +84,12 @@ class BigNumber {
         for (int i = 0; i < maxLength; i++) {
             int digit1 = Integer.parseInt(b1[maxLength - i - 1]);
             int digit2 = Integer.parseInt(b2[maxLength - i - 1]);
-            if ((digit1 - resta) >= digit2) {
-                sumaDigits = digit1 - resta - digit2;
+            if (digit1 >= digit2 + resta) {
+                sumaDigits = digit1 - (digit2 + resta);
                 resta = 0;
             }
             else{
-                sumaDigits = digit1 + 10 - digit2;
+                sumaDigits = digit1 + 10 - (digit2 + resta);
                 resta = 1;
             }
             result = sumaDigits + result;
