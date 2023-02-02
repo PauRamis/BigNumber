@@ -45,7 +45,7 @@ class BigNumber {
                 sumaDigits -= 10;
                 resta += 1;
             }
-            result = String.valueOf(sumaDigits) + result;
+            result = sumaDigits + result;
         }
 
         return new BigNumber(result);
@@ -97,7 +97,7 @@ class BigNumber {
     // Compara dos BigNumber. Torna 0 si són iguals, -1 si el primer és menor
     // i torna 1 si el segon és menor
     public int compareTo(BigNumber other) {
-        //Rapida comparació de equals per estalviar temps
+        //Ràpida comparació de equals per estalviar temps
         if (other.valor.equals(this.valor)) return 0;
 
         //Descartem que un valor sigui més gran que l'altre
