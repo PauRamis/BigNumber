@@ -157,7 +157,7 @@ public class BigNumberTest {
        BigNumber b1, b2;
         b1 = new BigNumber("2");
         b2 = new BigNumber("02");
-         assertEquals(b1, b2);
+        assertEquals(b1, b2);
         assertEquals(new BigNumber("4"), b1.mult(b2));
 
         b1 = new BigNumber("6");
@@ -181,7 +181,7 @@ public class BigNumberTest {
         b2 = new BigNumber("43");
         assertEquals(new BigNumber("6622"), b1.mult(b2));
 
-    /*    b1 = new BigNumber("10");
+        b1 = new BigNumber("10");
         b2 = new BigNumber("10");
         assertEquals(new BigNumber("100"), b1.mult(b2));
 
@@ -212,7 +212,7 @@ public class BigNumberTest {
         b1 = new BigNumber("45354645634563456345634563456");
         b2 = new BigNumber("4563456345634563456345634563456456");
         assertEquals(new BigNumber("206973945425055556860816594709203925477253940263513300024871936"), b1.mult(b2));
-    */}
+    }
 
     @Test
     public void divisions() {

@@ -108,10 +108,11 @@ class BigNumber {
         int resta = 0;
         int multiplicador = 0;
         for (int i = 0; i < b1.length; i++) {
+            //multipliquem tots els digits de b2 per cada digit de b1
             for (int j = 0; j < b2.length; j++) {
-                sumaDigits = Integer.parseInt(b1[b1.length - i - 1] ) * (Integer.parseInt(b2[b2.length - j - 1])+ resta);
+                sumaDigits = Integer.parseInt(b1[b1.length - i - 1] ) * Integer.parseInt(b2[b2.length - j - 1]) + resta;
                 resta = 0;
-                while (sumaDigits > 9 && i < b2.length-1){
+                while (sumaDigits > 9 && j < b2.length-1){
                     sumaDigits -= 10;
                     resta += 1;
                 }
