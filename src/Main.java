@@ -6,6 +6,10 @@ public class Main {
 
         String[] an = n.split("");
         String[] ax = x.split("");
-
+        String nn = "";
+        for (int k = 0; k < 2; k++) {
+            nn = nn + 0;
+        }
+        System.out.println(nn);
     }
 }

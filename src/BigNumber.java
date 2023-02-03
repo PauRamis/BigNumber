@@ -100,7 +100,30 @@ class BigNumber {
 
     // Multiplica
     BigNumber mult(BigNumber other) {
-        return other;
+        String[] b1 = this.valor.split("");
+        String[] b2 = other.valor.split("");
+        String resultTotal = "0";
+        String resultParcial = "";
+        int sumaDigits;
+        int resta = 0;
+        int multiplicador = 0;
+        for (int i = 0; i < b1.length; i++) {
+            for (int j = 0; j < b2.length; j++) {
+                sumaDigits = (Integer.parseInt(b1[b1.length - i - 1] )+ resta) * Integer.parseInt(b2[b2.length - i - 1]);
+                resta = 0;
+                while (sumaDigits > 9 && i < b2.length-1){
+                    sumaDigits -= 10;
+                    resta += 1;
+                }
+                for (int k = 0; k < multiplicador; k++) {
+                    resultParcial = resultParcial + 0;
+                }
+                multiplicador++;
+                resultParcial = sumaDigits + resultParcial;
+            }
+            resultTotal = String.valueOf(new BigNumber(resultTotal).add(new BigNumber(resultParcial)));
+        }
+        return new BigNumber(resultTotal);
     }
 
     // Divideix
