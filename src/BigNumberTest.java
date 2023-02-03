@@ -154,10 +154,10 @@ public class BigNumberTest {
 
     @Test
     public void multiplicacions() {
-        BigNumber b1, b2;
+       BigNumber b1, b2;
         b1 = new BigNumber("2");
         b2 = new BigNumber("02");
-        assertEquals(b1, b2);
+         assertEquals(b1, b2);
         assertEquals(new BigNumber("4"), b1.mult(b2));
 
         b1 = new BigNumber("6");
@@ -169,7 +169,7 @@ public class BigNumberTest {
         b2 = new BigNumber("2");
         assertEquals(new BigNumber("6"), b1.mult(b2));
 
-    /*    b1 = new BigNumber("12");
+        b1 = new BigNumber("12");
         b2 = new BigNumber("2");
         assertEquals(new BigNumber("24"), b1.mult(b2));
 
@@ -181,7 +181,7 @@ public class BigNumberTest {
         b2 = new BigNumber("43");
         assertEquals(new BigNumber("6622"), b1.mult(b2));
 
-        b1 = new BigNumber("10");
+    /*    b1 = new BigNumber("10");
         b2 = new BigNumber("10");
         assertEquals(new BigNumber("100"), b1.mult(b2));
 

@@ -109,19 +109,20 @@ class BigNumber {
         int multiplicador = 0;
         for (int i = 0; i < b1.length; i++) {
             for (int j = 0; j < b2.length; j++) {
-                sumaDigits = (Integer.parseInt(b1[b1.length - i - 1] )+ resta) * Integer.parseInt(b2[b2.length - i - 1]);
+                sumaDigits = Integer.parseInt(b1[b1.length - i - 1] ) * (Integer.parseInt(b2[b2.length - j - 1])+ resta);
                 resta = 0;
                 while (sumaDigits > 9 && i < b2.length-1){
                     sumaDigits -= 10;
                     resta += 1;
                 }
-                for (int k = 0; k < multiplicador; k++) {
-                    resultParcial = resultParcial + 0;
-                }
-                multiplicador++;
                 resultParcial = sumaDigits + resultParcial;
             }
+            for (int k = 0; k < multiplicador; k++) {
+                resultParcial = resultParcial + 0;
+            }
+            multiplicador++;
             resultTotal = String.valueOf(new BigNumber(resultTotal).add(new BigNumber(resultParcial)));
+            resultParcial = "";
         }
         return new BigNumber(resultTotal);
     }
