@@ -130,7 +130,39 @@ class BigNumber {
 
     // Divideix
     BigNumber div(BigNumber other) {
-        return other; }
+        String b1 = this.valor;
+        String b2 = other.valor;
+        BigNumber dividendActual = new BigNumber(trobarDividend(b1, b2));
+
+        //Bucle principal
+        while (dividendActual.compareTo(other) == -1){
+            int quocient = trobarQuocient(dividendActual, other);
+        }
+
+        String result="";
+        return new BigNumber(result);
+    }
+
+    //Multipliquem el divisor fins trobar el resultat més gran posible que sigui més petit que el dividend
+    private int trobarQuocient(BigNumber dividendActual, BigNumber other) {
+        for (int i = 1; i < 10; i++) {
+            int num = 10-i;
+            if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) == -1){
+                return num;
+            }
+        }
+        return 1;
+    }
+
+    private String trobarDividend(String b1, String b2) {
+        int answer = -1;
+        int incremental = 0;
+        while (answer == -1){
+            incremental++;
+            answer = b1.compareTo(b2.substring(0,incremental));
+        }
+        return b2.substring(0,incremental);
+    }
 
     // Arrel quadrada
     BigNumber sqrt() {
