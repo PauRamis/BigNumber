@@ -134,12 +134,15 @@ class BigNumber {
         String b2 = other.valor;
         BigNumber dividendActual = new BigNumber(trobarDividend(b1, b2));
 
-        //Bucle principal
-        while (dividendActual.compareTo(other) == -1){
-            int quocient = trobarQuocient(dividendActual, other);
+        //Bucle principal, mentre el divident sigui més gran que el divisor.
+        int quocient;
+        String result="";
+        while (dividendActual.compareTo(other) != 1){
+            quocient = trobarQuocient(dividendActual, other);
+            result += quocient;
+            dividendActual = new BigNumber(String.valueOf(quocient)).sub(dividendActual);
         }
 
-        String result="";
         return new BigNumber(result);
     }
 
@@ -157,11 +160,13 @@ class BigNumber {
     private String trobarDividend(String b1, String b2) {
         int answer = -1;
         int incremental = 0;
+
         while (answer == -1){
             incremental++;
-            answer = b1.compareTo(b2.substring(0,incremental));
+            answer = new BigNumber(b2).compareTo(new BigNumber(b1.substring(0,incremental)));
+            //answer = b2.compareTo(b1.substring(0,incremental));
         }
-        return b2.substring(0,incremental);
+        return b1.substring(0,incremental);
     }
 
     // Arrel quadrada
