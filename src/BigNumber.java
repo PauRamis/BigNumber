@@ -140,7 +140,10 @@ class BigNumber {
         while (dividendActual.compareTo(other) != -1){
             quocient = trobarQuocient(dividendActual, other);
             result += quocient;
-            dividendActual = new BigNumber(String.valueOf(quocient)).sub(dividendActual);
+
+            //divident actual = divident actual - quocient * divisor
+            BigNumber resultOperacio = new BigNumber(String.valueOf(quocient)).mult(other);
+            dividendActual = dividendActual.sub(resultOperacio);
         }
 
         return new BigNumber(result);

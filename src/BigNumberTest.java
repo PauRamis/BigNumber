@@ -218,11 +218,11 @@ public class BigNumberTest {
     public void divisions() {
         BigNumber b1, b2;
 
-    /*    b1 = new BigNumber("2");
+        b1 = new BigNumber("2");
         b2 = new BigNumber("2");
         assertEquals(new BigNumber("1"), b1.div(b2));
 
-    */    b1 = new BigNumber("10");
+        b1 = new BigNumber("10");
         b2 = new BigNumber("5");
         assertEquals(new BigNumber("2"), b1.div(b2));
 
