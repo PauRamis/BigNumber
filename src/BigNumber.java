@@ -137,7 +137,7 @@ class BigNumber {
         //Bucle principal, mentre el divident sigui més gran que el divisor.
         int quocient;
         String result="";
-        while (dividendActual.compareTo(other) != 1){
+        while (dividendActual.compareTo(other) != -1){
             quocient = trobarQuocient(dividendActual, other);
             result += quocient;
             dividendActual = new BigNumber(String.valueOf(quocient)).sub(dividendActual);
@@ -150,7 +150,8 @@ class BigNumber {
     private int trobarQuocient(BigNumber dividendActual, BigNumber other) {
         for (int i = 1; i < 10; i++) {
             int num = 10-i;
-            if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) == -1){
+            //Multiplicatn other per num, hauria de donar un numero més petit que el dividentActual
+            if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) != 1){
                 return num;
             }
         }
