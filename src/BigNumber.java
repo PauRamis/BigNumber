@@ -25,11 +25,11 @@ class BigNumber {
         int maxLength = b1.length;
 
         //Si b1 és més llarg, s'allarga b2
-        if (b1.length > b2.length){
+        if (b1.length > b2.length) {
             b2 = igualarArray(b2, maxLength);
         }
         //Si b2 és més llarg, s'allarga b1
-        else if (b2.length > b1.length){
+        else if (b2.length > b1.length) {
             maxLength = b2.length;
             b1 = igualarArray(b1, maxLength);
         }
@@ -41,7 +41,7 @@ class BigNumber {
         for (int i = 0; i < maxLength; i++) {
             sumaDigits = Integer.parseInt(b1[maxLength - i - 1]) + Integer.parseInt(b2[maxLength - i - 1]) + resta;
             resta = 0;
-            while (sumaDigits > 9 && i < maxLength-1){
+            while (sumaDigits > 9 && i < maxLength - 1) {
                 sumaDigits -= 10;
                 resta += 1;
             }
@@ -54,7 +54,7 @@ class BigNumber {
     private String[] igualarArray(String[] b, int maxLength) {
         String[] newArr = new String[maxLength];
         Arrays.fill(newArr, "0");
-        for(int i = 0; i < b.length; i++) {
+        for (int i = 0; i < b.length; i++) {
             newArr[maxLength - 1 - i] = b[b.length - 1 - i];
         }
         return newArr;
@@ -67,11 +67,11 @@ class BigNumber {
         int maxLength = b1.length;
 
         //Si b1 és més llarg, s'allarga b2
-        if (b1.length > b2.length){
+        if (b1.length > b2.length) {
             b2 = igualarArray(b2, maxLength);
         }
         //Si b2 és més llarg, s'allarga b1
-        else if (b2.length > b1.length){
+        else if (b2.length > b1.length) {
             maxLength = b2.length;
             b1 = igualarArray(b1, maxLength);
         }
@@ -87,8 +87,7 @@ class BigNumber {
             if (digit1 >= digit2 + resta) {
                 sumaDigits = digit1 - (digit2 + resta);
                 resta = 0;
-            }
-            else{
+            } else {
                 sumaDigits = digit1 + 10 - (digit2 + resta);
                 resta = 1;
             }
@@ -110,9 +109,9 @@ class BigNumber {
         for (int i = 0; i < b1.length; i++) {
             //multipliquem tots els digits de b2 per cada digit de b1
             for (int j = 0; j < b2.length; j++) {
-                sumaDigits = Integer.parseInt(b1[b1.length - i - 1] ) * Integer.parseInt(b2[b2.length - j - 1]) + resta;
+                sumaDigits = Integer.parseInt(b1[b1.length - i - 1]) * Integer.parseInt(b2[b2.length - j - 1]) + resta;
                 resta = 0;
-                while (sumaDigits > 9 && j < b2.length-1){
+                while (sumaDigits > 9 && j < b2.length - 1) {
                     sumaDigits -= 10;
                     resta += 1;
                 }
@@ -136,8 +135,8 @@ class BigNumber {
 
         //Bucle principal, mentre el divident sigui més gran que el divisor.
         int quocient;
-        String result="";
-        while (dividendActual.compareTo(other) != -1){
+        String result = "";
+        while (dividendActual.compareTo(other) != -1) {
             quocient = trobarQuocient(dividendActual, other);
             result += quocient;
 
@@ -152,9 +151,9 @@ class BigNumber {
     //Multipliquem el divisor fins trobar el resultat més gran posible que sigui més petit que el dividend
     private int trobarQuocient(BigNumber dividendActual, BigNumber other) {
         for (int i = 1; i < 10; i++) {
-            int num = 10-i;
+            int num = 10 - i;
             //Multiplicatn other per num, hauria de donar un numero més petit que el dividentActual
-            if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) != 1){
+            if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) != 1) {
                 return num;
             }
         }
@@ -165,12 +164,12 @@ class BigNumber {
         int answer = 1;
         int incremental = 0;
 
-        while (answer == 1){
+        while (answer == 1) {
             incremental++;
-            answer = new BigNumber(b2).compareTo(new BigNumber(b1.substring(0,incremental)));
+            answer = new BigNumber(b2).compareTo(new BigNumber(b1.substring(0, incremental)));
             //answer = b2.compareTo(b1.substring(0,incremental));
         }
-        return b1.substring(0,incremental);
+        return b1.substring(0, incremental);
     }
 
     // Arrel quadrada

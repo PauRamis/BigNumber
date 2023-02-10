@@ -154,7 +154,7 @@ public class BigNumberTest {
 
     @Test
     public void multiplicacions() {
-       BigNumber b1, b2;
+        BigNumber b1, b2;
         b1 = new BigNumber("2");
         b2 = new BigNumber("02");
         assertEquals(b1, b2);
@@ -226,11 +226,11 @@ public class BigNumberTest {
         b2 = new BigNumber("5");
         assertEquals(new BigNumber("2"), b1.div(b2));
 
-    /*    b1 = new BigNumber("45354645634563456345456345234545897894562634563456");
+        b1 = new BigNumber("45354645634563456345456345234545897894562634563456");
         b2 = new BigNumber("45634563456345634563456546799008905634563456456");
         assertEquals(new BigNumber("993"), b1.div(b2));
 
-        b1 = new BigNumber("2134345456123486126462457864246456434312345");
+    /*    b1 = new BigNumber("2134345456123486126462457864246456434312345");
         b2 = new BigNumber("4534564545645644564564567861534978978512");
         assertEquals(new BigNumber("470"), b1.div(b2));
 
@@ -257,7 +257,8 @@ public class BigNumberTest {
         b1 = new BigNumber("56734564576346234567567834534565675674567");
         b2 = new BigNumber("9999999999999999463499999999999999999");
         assertEquals(new BigNumber("5673"), b1.div(b2));
-    */}
+    */
+    }
 
     @Test
     public void arrels() {
