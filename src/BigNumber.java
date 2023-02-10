@@ -158,10 +158,10 @@ class BigNumber {
     }
 
     private String trobarDividend(String b1, String b2) {
-        int answer = -1;
+        int answer = 1;
         int incremental = 0;
 
-        while (answer == -1){
+        while (answer == 1){
             incremental++;
             answer = new BigNumber(b2).compareTo(new BigNumber(b1.substring(0,incremental)));
             //answer = b2.compareTo(b1.substring(0,incremental));
