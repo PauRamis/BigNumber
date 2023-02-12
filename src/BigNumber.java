@@ -107,7 +107,7 @@ class BigNumber {
         int resta = 0;
         int multiplicador = 0;
         for (int i = 0; i < b1.length; i++) {
-            //multipliquem tots els digits de b2 per cada digit de b1
+            //multipliquem tots els digits de b2 per cada dígit de b1
             for (int j = 0; j < b2.length; j++) {
                 sumaDigits = Integer.parseInt(b1[b1.length - i - 1]) * Integer.parseInt(b2[b2.length - j - 1]) + resta;
                 resta = 0;
@@ -133,14 +133,14 @@ class BigNumber {
         String b2 = other.valor;
         BigNumber dividendActual = new BigNumber(trobarDividend(b1, b2));
 
-        //Bucle principal, mentre el divident sigui més gran que el divisor.
+        //Bucle principal, mentre el dividend sigui més gran que el divisor.
         int quocient;
         String result = "";
         while (dividendActual.compareTo(other) != -1) {
             quocient = trobarQuocient(dividendActual, other);
             result += quocient;
 
-            //divident actual = divident actual - quocient * divisor
+            //dividend actual = dividend actual - quocient * divisor
             BigNumber resultOperacio = new BigNumber(String.valueOf(quocient)).mult(other);
             dividendActual = dividendActual.sub(resultOperacio);
         }
@@ -148,11 +148,11 @@ class BigNumber {
         return new BigNumber(result);
     }
 
-    //Multipliquem el divisor fins trobar el resultat més gran posible que sigui més petit que el dividend
+    //Multipliquem el divisor fins a trobar el resultat més gran possible que sigui més petit que el dividend
     private int trobarQuocient(BigNumber dividendActual, BigNumber other) {
         for (int i = 1; i < 10; i++) {
             int num = 10 - i;
-            //Multiplicatn other per num, hauria de donar un numero més petit que el dividentActual
+            //Multiplicant other per num, hauria de donar un número més petit que el dividendActual
             if (other.mult(new BigNumber(String.valueOf(num))).compareTo(dividendActual) != 1) {
                 return num;
             }
